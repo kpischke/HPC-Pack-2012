@@ -71,6 +71,25 @@
         "description": "The VM size of the head node. Note that some VM sizes in the list are only available in some particular locations. Please check the availability and the price of the VM sizes at https://azure.microsoft.com/en-us/pricing/details/virtual-machines before deployment."
       }
     },
+    		"virtualNetworkName": {
+           "type": "string",
+           "metadata": {
+              "description": "This is the name of the existing VNet."
+           }
+        },
+        "virtualNetworkResourceGroup": {
+           "type": "string",
+           "metadata": {
+              "description": "This is the name of the Resource Group which contains the VNet."
+           }
+        },
+        "subnetName": {
+           "type": "string",
+           "metadata": {
+              "description": "This is the name of the subnet which connects to onsite via VPN."
+           }
+        },
+    
     "computeNodeImage": {
       "type": "string",
       "defaultValue": "ComputeNode",
@@ -93,7 +112,7 @@
     },
     "computeNodeNumber": {
       "type": "int",
-      "defaultValue": 2,
+      "defaultValue": 1,
       "minValue": 1,
       "maxValue": 500,      
       "metadata": {
@@ -102,7 +121,7 @@
     },
     "computeNodeVMSize": {
       "type": "string",
-      "defaultValue": "Standard_D3_v2",
+      "defaultValue": "Standard_NV6",
       "allowedValues": [
         "Standard_A1",
         "Standard_A2",
